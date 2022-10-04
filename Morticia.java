@@ -89,7 +89,7 @@ public class Morticia extends LinearOpMode {
         arm.setPower(targetPower2);
         
         //servo
-        if(gamepad1.a)
+        if(gamepad2.a)
         {
           servo.setPosition(0.5);
         }
@@ -100,5 +100,5 @@ public class Morticia extends LinearOpMode {
         
       }
     }
+    //end
   }
-}
