@@ -1,0 +1,73 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+
+@TeleOp(name = "BlueAllianceAuto (Blocks to Java)")
+public class BlueAllianceAuto extends LinearOpMode {
+
+  private DcMotor frontright;
+  private DcMotor frontleft;
+  private DcMotor backright;
+  private DcMotor backleft;
+  
+  //
+  private ElapsedTime runtime = new ElapsedTime();
+  
+  /**
+   * This function is executed when this Op Mode is selected from the Driver Station.
+   */
+  @Override
+  public void runOpMode() {
+    // Put initialization blocks here.
+    
+    waitForStart();
+    
+        
+    frontright = hardwareMap.get(DcMotor.class, "front right");
+    frontleft = hardwareMap.get(DcMotor.class, "front left");
+    backright = hardwareMap.get(DcMotor.class, "back right");
+    backleft = hardwareMap.get(DcMotor.class, "back left");
+   
+    //direction of wheels
+    
+    frontright.setDirection(DcMotor.Direction.FORWARD);
+    frontleft.setDirection(DcMotor.Direction.FORWARD);
+    backright.setDirection(DcMotor.Direction.FORWARD);
+    backleft.setDirection(DcMotor.Direction.FORWARD);
+    //
+    armMotor.setDirection(DcMotor.Direction.FORWARD);
+    //
+    armServo.setPosition(0);
+    
+    
+    runtime.reset();
+    
+    
+    frontright.setPower(0);
+    frontleft.setPower(0);
+    backright.setPower(0);
+    backleft.setPower(0);
+    //move right
+    sleep(1000); //pauses before start
+    frontright.setPower(-0.5);
+    frontleft.setPower(0.5);
+    backright.setPower(0.5);
+    backleft.setPower(-0.5);
+    
+    
+    sleep(2550); //time interval for going sideways
+    frontright.setPower(0);
+    frontleft.setPower(0);
+    backright.setPower(0);
+    backleft.setPower(0);
+    
+       
+       
+      
+    
+  }
+}
