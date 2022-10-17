@@ -1,0 +1,63 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
+@Autonomous(name = "RedAuto (Blocks to Java)")
+public class RedAuto extends LinearOpMode {
+    
+    //
+    private DcMotor frontRight;
+    private DcMotor frontLeft;
+    private DcMotor backRight;
+    private DcMotor backLeft;
+    
+    private ElapsedTime runtime = new ElapsedTime();
+    
+    @Override
+    public void runOpMode(){
+       
+     waitForStart(); 
+       
+    // todo: write your code here
+    frontRight = hardwareMap.get(DcMotor.class, "frontRight");
+    frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
+    backRight = hardwareMap.get(DcMotor.class, "backRight");
+    backLeft = hardwareMap.get(DcMotor.class, "backLeft");
+    
+    
+    //direction of wheels
+    //set direction of wheels forward
+    frontRight.setDirection(DcMotor.Direction.FORWARD);
+    frontLeft.setDirection(DcMotor.Direction.FORWARD);
+    backRight.setDirection(DcMotor.Direction.FORWARD);
+    backLeft.setDirection(DcMotor.Direction.FORWARD);
+    
+      runtime.reset();
+    //
+    
+    frontRight.setPower(0);
+    frontLeft.setPower(0);
+    backRight.setPower(0);
+    backLeft.setPower(0);
+    //move right
+    sleep(1000); //pauses before start
+    frontRight.setPower(0.5);
+    frontLeft.setPower(-0.5);
+    backRight.setPower(-0.5);
+    backLeft.setPower(0.5);
+    
+    
+    sleep(2550); //time interval for going sideways
+    frontRight.setPower(0);
+    frontLeft.setPower(0);
+    backRight.setPower(0);
+    backLeft.setPower(0);
+        
+        
+    //end
+    }
+}
