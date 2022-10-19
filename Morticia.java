@@ -15,7 +15,8 @@ public class Morticia extends LinearOpMode {
   private DcMotor backLeft;
   //arm
   private DcMotor arm;
-  private Servo servo;
+  private Servo rightServo;
+  private Servo leftServo;
   
 
   /**
@@ -34,7 +35,8 @@ public class Morticia extends LinearOpMode {
     arm = hardwareMap.get(DcMotor.class, "arm");
     arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     //servo
-    servo = hardwareMap.get(Servo.class,"servo");
+    rightServo = hardwareMap.get(Servo.class,"rightServo");
+    leftServo = hardwareMap.get(Servo.class,"leftServo");
     
     
     waitForStart();
@@ -85,20 +87,23 @@ public class Morticia extends LinearOpMode {
         backLeft.setPower(targetPower2);
         
         //arm motor
-        targetPower2 = gamepad2.right_stick_y /2;
+        targetPower2 = gamepad2.left_stick_y /2;
         arm.setPower(targetPower2);
         
         //servo
         if(gamepad2.a)
         {
-          servo.setPosition(0.5);
+          rightServo.setPosition(0.2);
+          leftServo.setPosition(0.1);
         }
         else
         {
-          servo.setPosition(1);
+          rightServo.setPosition(0.6);
+          leftServo.setPosition(0.4);
         }
         
       }
     }
-    //end
   }
+  //end
+}
