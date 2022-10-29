@@ -49,14 +49,14 @@ public class Morticia extends LinearOpMode {
       while (opModeIsActive()) {
         // forward and backwards
         //frt
-        targetPower2 = gamepad1.left_stick_y;
+        targetPower2 = -gamepad1.left_stick_y;
         frontRight.setPower(targetPower2);
-        targetPower2 = gamepad1.left_stick_y;
+        targetPower2 = -gamepad1.left_stick_y;
         frontLeft.setPower(targetPower2);
         //bck
-        targetPower2 = gamepad1.left_stick_y;
-        backRight.setPower(targetPower2);
         targetPower2 = -gamepad1.left_stick_y;
+        backRight.setPower(targetPower2);
+        targetPower2 = gamepad1.left_stick_y;
         backLeft.setPower(targetPower2);
         telemetry.update();
         
@@ -87,14 +87,20 @@ public class Morticia extends LinearOpMode {
         backLeft.setPower(targetPower2);
         
         //arm motor
-        targetPower2 = gamepad2.left_stick_y /2;
+        //if()
+        //{
+          
+        //}
+        targetPower2 = -gamepad2.left_stick_y ;
         arm.setPower(targetPower2);
+        //arm.setPower(0.8);
+        
         
         //servo
         if(gamepad2.a)
         {
-          rightServo.setPosition(0.2);
-          leftServo.setPosition(0.1);
+          rightServo.setPosition(0.0);
+          leftServo.setPosition(0.0);
         }
         else
         {
