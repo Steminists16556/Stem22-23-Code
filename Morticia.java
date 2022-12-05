@@ -91,25 +91,25 @@ public class Morticia extends LinearOpMode {
         //{
           
         //}
-        targetPower2 = -gamepad2.left_stick_y ;
-        arm.setPower(targetPower2);
+        //targetPower2 = -gamepad2.left_stick_y * 0.7;
+        targetPower2 = -gamepad2.left_stick_y;
+        arm.setPower(targetPower2 * 0.7);
         //arm.setPower(0.8);
         
         
         //servo
         if(gamepad2.a)
         {
-          rightServo.setPosition(0.0);
+          rightServo.setPosition(0.6);
           leftServo.setPosition(0.0);
         }
         else
         {
-          rightServo.setPosition(0.6);
+          rightServo.setPosition(0.0);
           leftServo.setPosition(0.4);
         }
         
       }
     }
   }
-  //end
 }
