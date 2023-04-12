@@ -26,15 +26,15 @@ public class Morticia extends LinearOpMode {
   public void runOpMode() {
     float targetPower2;
 
-    //wheel
+   //wheel
     frontRight = hardwareMap.get(DcMotor.class, "frontRight");
     frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
     backRight = hardwareMap.get(DcMotor.class, "backRight");
     backLeft = hardwareMap.get(DcMotor.class, "backLeft");
-    //arm motor
+   //arm motor
     arm = hardwareMap.get(DcMotor.class, "arm");
     arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-    //servo
+   //servo
     rightServo = hardwareMap.get(Servo.class,"rightServo");
     leftServo = hardwareMap.get(Servo.class,"leftServo");
     
